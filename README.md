@@ -1,5 +1,5 @@
-# Node Restful API with NoSQL database
-This project connects to a NoSQL (MongoDB) from www.mongodb.com and shows how to create two collections on a AWS cluster to store/retrieve data.
+# Node Restful API with MongoDB
+This project connects to a NoSQL database (MongoDB Atlas - www.mongodb.com) and shows how to create two collections on a AWS cluster.
 
 A node file was created to run on the server side to query Youtube API data and insert into MongoDB using Mongoose.
 The following collections were created on MongoDB as an example:
