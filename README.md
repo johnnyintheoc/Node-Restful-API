@@ -11,17 +11,17 @@ Ues Express, Handlebars, Google API, and Mongoose (MongoDB Atlas with AWS Cluste
 Usage
 ```
 npm init
-npm install express express-handlebars method-override mongoose body-parser dotenv
+npm install express express-handlebars googleapis mongoose method-override body-parser dotenv
 npm start
 ```
 
-To import Youtube videos into MongoDB:
+Importing Youtube videos into MongoDB!
 Edit the "searchKeyword" for a different key term to search youtube videos.
 ```
 node getChannels.js
 ```
 
-Important
+Important!
 This project requires a Google API key and a MongoDB Atlas connection string.
 A .env file was created (and ommited from this project) to store these private strings.
 Create a .env file in the root with the following:
