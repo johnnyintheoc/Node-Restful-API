@@ -7,9 +7,7 @@ const bodyParser = require('body-parser');
 require('dotenv/config');
 
 // Routes
-const HomeRoute = require('./routes/home.js');
-const FitnessRoute = require('./routes/fitness.js');
-const GiveawaysRoute = require('./routes/giveaways.js');
+const routeHandler = require('./routes/handler.js');
 
 // Set App
 app = express();
@@ -20,9 +18,10 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(methodOverride("_method"));
-app.use('/', HomeRoute);
-app.use('/fitness', FitnessRoute);
-app.use('/giveaways', GiveawaysRoute);
+app.use('/', routeHandler);
+app.use((req, res, next) => {
+    res.status(404).render('404error', {style:'default', pg:'404 Page Error', brandIcon:'fa fa-exclamation-circle'});
+});
 
 // Handlebars Configuration
 app.engine("hbs", hbs({
@@ -34,23 +33,13 @@ app.engine("hbs", hbs({
 app.set("view engine", "hbs");
 
 // MongoDB Connection
-mongoose.connect(process.env.DB_URI, {useNewUrlParser:true, useUnifiedTopology:true}, () => {
-    console.log('DB Connected.');
+mongoose.connect(process.env.DB_URI, {useNewUrlParser:true, useUnifiedTopology:true})
+.then( () => {
+    console.log('DB Connected!');
+})
+.catch( (err) => {
+    console.log(err);
 });
-
-// Connection string given by MongoDB Atlas
-/*
-const MongoClient = require('mongodb').MongoClient;
-const uri = process.env.DB_URI;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
-    console.log('DB Connected.');   
-});
-
-client.connect(err => {
-  const collection = client.db("sample_youtube").collection("giveawaysListings");
-  client.close();
-});
-*/
 
 // Start Server
 const PORT = process.env.PORT || 5000;

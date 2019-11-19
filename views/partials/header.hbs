@@ -1,11 +1,18 @@
 <header>
-    <div class="container">
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/fitness">Health &amp; Fitness</a></li>
-                <li><a href="/giveaways">Giveaways</a></li>
-            </ul>
-        </nav>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="/" class="navbar-brand"><i class="{{brandIcon}}" aria-hidden="true"></i></a>
+        <a href="/" class="navbar-text">Restful API Demo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMainMenu" aria-controls="navMainMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navMainMenu" class="navbar-collapse collapse">
+            <div class="navbar-nav ml-auto">
+                <a href="/puppies" class="nav-item nav-link">Puppies</a>
+                <a href="/bouldering" class="nav-item nav-link">Bouldering</a>
+                <a href="/movie-trailers" class="nav-item nav-link">Movie Trailers</a>
+                <a href="/about" class="nav-item nav-link">About</a>
+            </div>
+        </div>
+    </nav>
 </header>

@@ -2,9 +2,9 @@
   "name": "node-restful-api",
   "version": "1.0.0",
   "description": "Restful Api using Node, Express, and MongoDB",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

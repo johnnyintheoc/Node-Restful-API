@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ChannelSchema = new Schema({
+    videoId: {type:String},
     channelId: {type:String},
     channelTitle: {type:String},
     title: {type:String,},
@@ -10,10 +11,11 @@ const ChannelSchema = new Schema({
     publishedAt: {type:Date}
 });
 
-const Fitness = mongoose.model('Fitness', ChannelSchema, 'fitnessListings');
-const Giveaways = mongoose.model('Giveaways', ChannelSchema, 'giveawayListings');
+const Puppies = mongoose.model('Puppies', ChannelSchema, 'puppiesListings');
+const Bouldering = mongoose.model('Bouldering', ChannelSchema, 'boulderingListings');
+const MovieTrailers = mongoose.model('MovieTrailers', ChannelSchema, 'movieTrailerListings');
 
-const mySchemas = {'Fitness':Fitness, 'Giveaways':Giveaways};
+const mySchemas = {'Puppies':Puppies, 'Bouldering':Bouldering, 'MovieTrailers':MovieTrailers};
 module.exports = mySchemas;
 
 //module.exports = Channel = mongoose.model('Channel', ChannelSchema, 'channelListings');
